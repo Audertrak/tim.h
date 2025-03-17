@@ -17,11 +17,36 @@
 
 #define _SCREEN_CLEAR "2J" // clear the current screen contents
 
+#define _CURSOR_HIDE "?25l" // prevent cursor from being displayed
+#define _CURSOR_SHOW "?25h" // make the cursor visible
 #define _CURSOR_HOME "H" // move cursor to the top left corner of the 'screen'
-#define _CURSOR_SAVE "s" // save current position of cursor (to restore later)
+#define _CURSOR_SAVE "s" // save current position of cursor
+#define _CURSOR_RESTORE "u" // restore previously saved cursor position
 
 #define _LINE_CLEAR "2K" // clear the line contents @ current cursor position
 
+#define _TEXT_BOLD "1m"      // set text to bold
+#define _TEXT_UNDERLINE "4m" // set text to underlined
+
+#define _COLOR_INVERT "7m" // swap foreground(char) and background(term) colors
+#define _COLOR_FG_BLACK "30m"
+#define _COLOR_FG_RED "31m"
+#define _COLOR_FG_GREEN "32m"
+#define _COLOR_FG_YELLOW "33m"
+#define _COLOR_FG_BLUE "34m"
+#define _COLOR_FG_MAGENTA "35m"
+#define _COLOR_FG_CYAN "36m"
+#define _COLOR_FG_WHITE "37m"
+#define _COLOR_BG_BLACK "40m"
+#define _COLOR_BG_RED "41m"
+#define _COLOR_BG_GREEN "42m"
+#define _COLOR_BG_YELLOW "43m"
+#define _COLOR_BG_BLUE "44m"
+#define _COLOR_BG_MAGENTA "45m"
+#define _COLOR_BG_CYAN "46m"
+#define _COLOR_BG_WHITE "47m"
+
+#define _BUF_RESET_FORMAT "0m"  // reset color, bold, underline(etc) to defaults
 #define _BUF_ENTER_ALT "?1049h" // switch to an alternate screen buffer
 #define _BUF_EXIT_ALT "?10491"  // return to the main screen screen buffer
 
