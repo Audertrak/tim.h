@@ -1,3 +1,9 @@
+#ifndef TIM_H
+#define TIM_H
+
+// implementation
+#ifdef TIMPLEMENTATION
+
 #include <conio.h>
 #include <ctype.h>
 #include <processenv.h>
@@ -162,3 +168,10 @@ int scan_t(const char *format, ...) {
   }
   return result;
 }
+
+// header declaration only
+#else
+
+#endif // TIMPLEMENTATION
+
+#endif // TIM_H
