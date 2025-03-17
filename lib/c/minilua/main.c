@@ -12,6 +12,28 @@
 #define CLAY_IMPLEMENTATION
 #include "clay/clay.h"
 
+// ANSI escape string literals
+#define OCT "\033[" // 'octal'; prefix for ANSI escape sequences
+
+#define _SCREEN_CLEAR "2J" // clear the current screen contents
+
+#define _CURSOR_HOME "H" // move cursor to the top left corner of the 'screen'
+#define _CURSOR_SAVE "s" // save current position of cursor (to restore later)
+
+#define _LINE_CLEAR "2K" // clear the line contents @ current cursor position
+
+#define _BUF_ENTER_ALT "?1049h" // switch to an alternate screen buffer
+#define _BUF_EXIT_ALT "?10491"  // return to the main screen screen buffer
+
+// ANSI escape macros
+#define SCREEN_CLEAR() printf(OCT _SCREEN_CLEAR)
+
+#define CURSOR_HOME() printf(OCT _CURSOR_HOME)
+#define CURSOR_SAVE() printf(OCT _CURSOR_SAVE)
+
+#define BUF_ENTER_ALT() printf(OCT _BUF_ENTER_ALT)
+#define BUF_EXIT_ALT() printf(OCT _BUF_EXIT_ALT)
+
 int innit() {
   // get the 'handle' to stdout (the console)
   HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -35,11 +57,12 @@ int innit() {
   }
 
   // use ANSI escape sequences to clear the screen
-  printf("\033[2J");
+  SCREEN_CLEAR();
+  CURSOR_HOME();
   printf("ANSI escape codes enabled\n");
 
   // enter alternate screen buffer
-  printf("\033[?1049h");
+  BUF_ENTER_ALT();
 
   return 0;
 }
@@ -88,7 +111,7 @@ int exit_lua() {
 // void lprint(char *str) {}
 
 // exit
-void exitui() { printf("\033[?1049l"); }
+void exitui() { BUF_EXIT_ALT(); }
 
 int main() {
   int choice;
