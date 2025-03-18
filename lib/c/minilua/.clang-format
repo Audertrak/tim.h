@@ -42,21 +42,9 @@ AllowShortLambdasOnASingleLine: Inline
 AllowShortLoopsOnASingleLine: true
 AlwaysBreakBeforeMultilineStrings: false
 
-BasedOnStyle: LLVM
 BinPackParameters: true
 BitFieldColonSpacing: Both
-BreakAdjacentStringLiterals: true
-BreakAfterReturnType: ExceptShortType
-BreakArrays: false
-BreakBeforeBinaryOperators: None
-BreakBeforeBraces: Attach
-BreakConstructorInitializers: AfterColon
-BreakFunctionDefinitionParameters: false
-BreakInheritanceList: AfterColon
-BreakStringLiterals: true
-
-CompactNamespaces: false
-ColumnLimit: 100
+ColumnLimit: 120
 ContinuationIndentWidth: 2
 
 EmptyLineAfterAccessModifier: Always
@@ -68,20 +56,12 @@ IndentExternBlock: Indent
 IndentGotoLabels: true
 IndentPPDirectives: BeforeHash
 IndentRequiresClause: true
-IndentWidth: 4
 IndentWrappedFunctionNames: true
 
 KeepEmptyLines:
   AtEndOfFile: false
   AtStartOfBlock: true
   AtStartOfFile: false
-
-MacroBlockBegin: "^CLAY\\("
-MacroBlockEnd: "^\\}$"
-Macros:
-  - CLAY_ID(x)=x
-  - CLAY_LAYOUT(x)=x
-  - CLAY_RECTANGLE(x)=x
 
 PPIndentWidth: 2
 PointerAlignment: Right
@@ -95,30 +75,29 @@ ReflowComments: true
 
 SeparateDefinitionBlocks: Always
 SortIncludes: CaseSensitive
-SpaceAfterCStyleCast: true
-SpaceAfterLogicalNot: false
-SpaceAfterTemplateKeyword: false
-SpaceBeforeAssignmentOperators: true
-SpaceBeforeCaseColon: false
-SpaceBeforeInheritanceColon: true
-SpaceBeforeJsonColon: false
-SpaceBeforeParens: ControlStatements
-SpaceBeforeRangeBasedForLoopColon: false
-SpaceBeforeSquareBrackets: false
-SpacesBeforeTrailingComments: 4
-SpacesInAngles: Never
-SpacesInLineCommentPrefix:
-  Minimum: 1
-  Maximum: 1
-SpacesInParens: Custom
-SpacesInParensOptions:
-  ExceptDoubleParentheses: false
-  InConditionalStatements: true
-  Other: true
-  InCStyleCasts: false
-  InEmptyParentheses: false
-SpacesInSquareBrackets: false
-StatementMacros: [CLAY_ID, CLAY_LAYOUT, CLAY_RECTANGLE, CLAY_TEXT, CLAY_TEXT_CONFIG, CLAY_STRING]
+#SpaceAfterCStyleCast: true
+#SpaceAfterLogicalNot: false
+#SpaceAfterTemplateKeyword: false
+#SpaceBeforeAssignmentOperators: true
+#SpaceBeforeCaseColon: false
+#SpaceBeforeInheritanceColon: true
+#SpaceBeforeJsonColon: false
+#SpaceBeforeParens: ControlStatements
+#SpaceBeforeRangeBasedForLoopColon: false
+#SpaceBeforeSquareBrackets: false
+#SpacesBeforeTrailingComments: 4
+#SpacesInAngles: Never
+#SpacesInLineCommentPrefix:
+#  Minimum: 1
+#  Maximum: 1
+#SpacesInParens: Custom
+#SpacesInParensOptions:
+#  ExceptDoubleParentheses: false
+#  InConditionalStatements: true
+#  Other: true
+#  InCStyleCasts: false
+#  InEmptyParentheses: false
+#SpacesInSquareBrackets: false
 
 TableGenBreakInsideDAGArg: BreakAll
 
